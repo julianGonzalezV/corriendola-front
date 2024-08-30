@@ -1,0 +1,35 @@
+@if (recipes$ | async; as recipes) {
+    <div class="container main-container">
+     
+      <div class="container">
+        <form [formGroup]="searchForm" (ngSubmit)="loadByName()">
+          <div class="d-flex mt-2">
+            <input placeholder="Nombe de la receta" type="Search" class="form-control" id="name" formControlName="name">      
+            <button class="btn btn-outline-success" type="submit">Buscar receta</button>
+          </div>   
+        </form>
+      </div>
+      <hr>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+          @for(recipe of recipes; track recipe.code){
+              <div class="col">
+                  <div class="card w-55 h-100">
+                    <img src="{{recipe.imageUrl}}" class="card-img-top" alt="...">
+                    <div class="card-body" >
+                      <h5 class="card-title">{{recipe.name}}</h5>
+                      <p class="card-text">{{recipe.description}}</p>
+                      <a routerLink="/recipes/{{recipe.code}}" class="btn btn-info btn-sm">¿Cómo prepararlo?</a>
+                    </div>
+                  </div>
+               </div>        
+          }@empty {
+            <h3>No se encontraron recetas</h3>
+          }
+        </div>
+    </div>
+  }
+  
+  
+  
+  
+  

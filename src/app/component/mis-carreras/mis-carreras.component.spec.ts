@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { MisCarrerasComponent } from './mis-carreras.component';
+
+describe('MisCarrerasComponent', () => {
+  let component: MisCarrerasComponent;
+  let fixture: ComponentFixture<MisCarrerasComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [MisCarrerasComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(MisCarrerasComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
